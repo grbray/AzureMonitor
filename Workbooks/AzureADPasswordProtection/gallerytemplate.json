@@ -16,7 +16,7 @@
             "quote": "'",
             "delimiter": ",",
             "value": [
-              "/subscriptions/95f4934e-9c39-4b5c-9a52-480c1309c8fb"
+              "value::all"
             ],
             "typeSettings": {
               "additionalResourceOptions": [
