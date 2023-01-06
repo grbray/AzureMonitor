@@ -626,7 +626,7 @@
             "type": 3,
             "content": {
               "version": "KqlItem/1.0",
-              "query": "let UnhealthyCriteria = 9h;\r\nEvent\r\n| where EventID == 20003\r\n| summarize LastHeartbeat = max(TimeGenerated) by Computer\r\n| extend State = \r\niff(LastHeartbeat < ago(UnhealthyCriteria), 'Unhealthy', 'Healthy')",
+              "query": "let UnhealthyCriteria = 9h;\r\nEvent\r\n| where EventID == 20003 and Source =~ \"Microsoft-AzureADPasswordProtection-ProxyService\"\r\n| summarize LastHeartbeat = max(TimeGenerated) by Computer\r\n| extend State = \r\niff(LastHeartbeat < ago(UnhealthyCriteria), 'Unhealthy', 'Healthy')",
               "size": 3,
               "showAnalytics": true,
               "title": "Proxy End-to-End Azure Communication Status",
